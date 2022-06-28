@@ -5,7 +5,7 @@
                         <h4 class="page-title">Edit Profile</h4>
                     </div>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url();?>Client/jobseeker" method="post" enctype="multipart/form-data">
                     <div class="card-box">
                         <h3 class="card-title">Basic Informations</h3>
                         <div class="row">
@@ -14,7 +14,8 @@
                                     <img class="inline-block" src="assets/img/profile.jpg" >
                                     <div class="fileupload btn">
                                         <span class="btn-text">upload photo</span>
-                                        <input class="upload" type="file">
+                                        <input class="upload"name="photo" type="file">
+                                        <small><?php echo form_error('photo');?></small>
                                     </div>
                                 </div>
                                 <div class="profile-basic">
@@ -22,30 +23,34 @@
                                         <div class="col-md-6">
                                             <div class="form-group form-focus">
                                                 <label class="focus-label">First Name</label>
-                                                <input type="text" class="form-control floating" value="Robert">
+                                                <input type="text" class="form-control floating" name="first_name" >
+                                                <small><?php echo form_error('first_name');?></small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-focus">
                                                 <label class="focus-label">Last Name</label>
-                                                <input type="text" class="form-control floating" value="Balinda">
+                                                <input type="text" class="form-control floating" name="last_name" >
+                                                <small><?php echo form_error('last_name');?></small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-focus">
                                                 <label class="focus-label">Birth Date</label>
                                                 <div class="cal-icon">
-                                                    <input class="form-control floating datetimepicker" type="text" value="05/06/2000">
+                                                    <input name="birth_date" class="form-control floating datetimepicker" type="text" >
+                                                    <small><?php echo form_error('birth_date');?></small>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-focus select-focus">
-                                                <label class="focus-label">Gendar</label>
+                                                <label name="gender" class="focus-label">Gendar</label>
                                                 <select class="select form-control floating">
                                                     <option value="male selected">Male</option>
-                                                    <option value="female">Female</option>
+                                                    <option  value="female">Female</option>
                                                 </select>
+                                                <small><?php echo form_error('gender');?></small>
                                             </div>
                                         </div>
                                     </div>
@@ -59,26 +64,30 @@
                             <div class="col-md-12">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Address</label>
-                                    <input type="text" class="form-control floating" value="Mutundwe zone">
+                                    <input name="address" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('address');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">District</label>
-                                    <input type="text" class="form-control floating" value="Kampala">
+                                    <input name="district" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('district');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">County</label>
-                                    <input type="text" class="form-control floating" value="Nateete">
+                                    <input name="county" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('county');?></small>
                                 </div>
                             </div>
                            
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Phone Number</label>
-                                    <input type="text" class="form-control floating" value="0703442455">
+                                    <input name="phone_number" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('phone_number');?></small>
                                 </div>
                             </div>
                         </div>
@@ -89,20 +98,23 @@
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Institution</label>
-                                    <input type="text" class="form-control floating" value="Makerere">
+                                    <input name="institution" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('institution');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Sector</label>
-                                    <input type="text" class="form-control floating" value="Technology">
+                                    <input name="sector" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('sector');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Starting Date</label>
 									<div class="cal-icon">
-										<input type="text" class="form-control floating datetimepicker" value="01/06/2019">
+										<input name="starting_date" type="text" class="form-control floating datetimepicker" >
+                                        <small><?php echo form_error('starting_Date');?></small>
 									</div>
                                 </div>
                             </div>
@@ -110,20 +122,23 @@
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Complete Date</label>
 									<div class="cal-icon">
-										<input type="text" class="form-control floating datetimepicker" value="31/05/2024">
+										<input name="complete_date" type="text" class="form-control floating datetimepicker" >
+                                        <small><?php echo form_error('complete_date');?></small>
 									</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Degree</label>
-                                    <input type="text" class="form-control floating" value="BE Computer Science">
+                                    <input name="degree" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('degree');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Grade</label>
-                                    <input type="text" class="form-control floating" value="First class">
+                                    <input name="grade" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('grade');?></small>
                                 </div>
                             </div>
                         </div>
@@ -137,26 +152,30 @@
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Company Name</label>
-                                    <input type="text" class="form-control floating" value="crane cloud">
+                                    <input name="company_name" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('company_name');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Location</label>
-                                    <input type="text" class="form-control floating" value="Kampala-Uganda">
+                                    <input name="location" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('location');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Job Position</label>
-                                    <input type="text" class="form-control floating" value="Web Developer">
+                                    <input name="job_position" type="text" class="form-control floating" >
+                                    <small><?php echo form_error('job_position');?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Period From</label>
 									<div class="cal-icon">
-										<input type="text" class="form-control floating datetimepicker" value="01/07/2022">
+										<input name="period_from" type="text" class="form-control floating datetimepicker" >
+                                        <small><?php echo form_error('period_from');?></small>
 									</div>
                                 </div>
                             </div>
@@ -164,7 +183,8 @@
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Period To</label>
 									<div class="cal-icon">
-										<input type="text" class="form-control floating datetimepicker" value="date">
+										<input name="period_to" type="text" class="form-control floating datetimepicker" >
+                                        <small><?php echo form_error('period_to');?></small>
 									</div>
                                 </div>
                             </div>
@@ -174,7 +194,7 @@
                         </div>
                     </div>
                     <div class="text-center m-t-20">
-                        <button class="btn btn-primary submit-btn" type="button">Save</button>
+                        <button class="btn btn-success btm-sm" type="submit">Save</button>
                     </div>
                 </form>
             </div>

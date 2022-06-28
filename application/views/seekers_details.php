@@ -20,29 +20,28 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
-                                                <h3 class="user-name m-t-0 mb-0">Cristina Groves</h3>
+                                                <h3 class="user-name m-t-0 mb-0">Cristina Nalumansi</h3>
                                                 <small class="text-muted">Gynecologist</small>
-                                                <div class="staff-id">Employee ID : DR-0001</div>
-                                                <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Send Message</a></div>
+                                               <div><a href="<?php echo base_url('Client/Jobseeker')?>" class="btn btn-info btm-sm"><b>Edit profile</b></a></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <ul class="personal-info">
                                                 <li>
                                                     <span class="title">Phone:</span>
-                                                    <span class="text"><a href="#">770-889-6484</a></span>
+                                                    <span class="text">0705652687</span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Email:</span>
-                                                    <span class="text"><a href="#">cristinagroves@example.com</a></span>
+                                                    <span class="text">cristina@example.com</span>
                                                 </li>
                                                 <li>
-                                                    <span class="title">Birthday:</span>
+                                                    <span class="title">Birth Date:</span>
                                                     <span class="text">3rd March</span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Address:</span>
-                                                    <span class="text">714 Burwell Heights Road, Bridge City, TX, 77611</span>
+                                                    <span class="text">Nateete-Kampala</span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Gender:</span>
@@ -59,10 +58,6 @@
 				<div class="profile-tabs">
 					<ul class="nav nav-tabs nav-tabs-bottom">
 						<li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Profile</a></li>
-						<li class="nav-item"><a class="nav-link" href="#bottom-tab3" data-toggle="tab">Messages</a></li>
-					</ul>
-
 					<div class="tab-content">
 						<div class="tab-pane show active" id="about-cont">
                 <div class="row">
@@ -140,12 +135,6 @@
                         </div>
                     </div>
                 </div>
-						</div>
-						<div class="tab-pane" id="bottom-tab2">
-							Tab content 2
-						</div>
-						<div class="tab-pane" id="bottom-tab3">
-							Tab content 3
 						</div>
 					</div>
 				</div>

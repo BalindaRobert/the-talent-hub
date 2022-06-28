@@ -20,7 +20,9 @@
 }
 
 body {
-	background: #f6f5f7;
+	background-image: url("assets/img/R.jpg");
+	transition: background-image 3s;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -28,6 +30,7 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
+	
 }
 
 h1 {
@@ -264,6 +267,15 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+#choice{
+    font-weight: 200;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:black;
+    border: 0ch;
+	font-style: oblique;
+	
+}
 </style>
 
   </head>
@@ -272,24 +284,17 @@ footer a {
 
 <script type="text/javascript">
 
-
-$(document).ready(function(e) {
-
-	init();
-
-	function init() {
-		
-		$('#signIn').on('click', function(e) {
-		alert('dfggdfg');
-			//$('#sidebar-menu ul li.submenu a.active').addClass('right-panel-active');
-			
-			
+function myhead(){
 	
-	}}
-
-
-});
-
+	var container = document.getElementById('container');
+	container.classList.add("right-panel-active");
+	
+}
+	function myhead2(){
+		
+		var container = document.getElementById('container');
+container.classList.remove('right-panel-active');		
+	}
 
 var signUpButton = document.getElementById('signUp');
 var signInButton = document.getElementById('signIn');
@@ -300,47 +305,37 @@ signUpButton.addEventListener('click', function () {
 signInButton.addEventListener('click', function () {
     container.classList.remove("right-panel-active");
 });
+var image = new Image();
+// Image for transition
+image.src = "assets/img/yow.jpg";
+image.onload = function () {
+  $(".element").css("background-image", 
+                    "url('" + image.src + "')");
+};
+
 </script>
 
-<script>
-            $(function () {
-                $('#signIn').on('click', function(e) {
-                    alert('jjjj');
 
-                };
-            });
-     </script>
 
 
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="<?php echo base_url();?>Client/Employer" method="post" enctype="multipart/form-data">
+		<form action="<?php echo base_url();?>Client/signup" method="post" enctype="multipart/form-data">
 			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			<input type="text" name="name" placeholder="Username"required/>
+			<input type="email" name="email" placeholder="Email"required/>
+			<input type="password" name="password" placeholder="Password"required  />
+			<input type="password" name="confirm_password" placeholder="Confirm Password"required  />
+		    <button type="submit">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="<?php echo base_url();?>Client/Jobseeker" method="post" enctype="multipart/form-data">
+		<form action="<?php echo base_url();?>Client/processLogin" method="post" enctype="multipart/form-data">
 			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="email" name="email" placeholder="Email"/>
+			<input type="password" name="password" placeholder="Password"/>
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button type="submit">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -348,12 +343,12 @@ signInButton.addEventListener('click', function () {
 			<div class="overlay-panel overlay-left">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
+				<button class="ghost" id="signIn" onclick="myhead2()">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<button class="ghost" id="signUp" onclick="myhead()">Sign Up</button>
 			</div>
 		</div>
 	</div>

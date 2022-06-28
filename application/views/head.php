@@ -21,7 +21,7 @@
         <div class="header">
 			<div class="header-left">
 				<a href="index-2.html" class="logo">
-					<img src="<?php echo base_url();?>assets/img/logoo.png" width="500px" height="300px" alt="" > 
+				<img src="<?php echo base_url();?>assets/img/logo.png" width="50px" height="50px" allign="top" alt="" > 
 				</a>
 			</div>
 			 <ul class="nav user-menu float-right">
@@ -30,13 +30,11 @@
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img"><img class="rounded-circle" src="<?php echo base_url();?>assets/img/user.jpg" width="40" alt="Admin">
 							<span class="status online"></span></span>
-                        <span>Admin</span>
+                        <span><?php echo  $this->session->userdata('email'); ?></span>
                     </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.html">My Profile</a>
-						<a class="dropdown-item" href="edit-profile.html">My Details</a>
-						
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item"  href="<?php echo base_url('Client/Seekers_details');?>"  >My Profile</a>
+						<a class="dropdown-item" href="<?php echo base_url('Client/logout');?>" >Logout</a>
 					</div>
                 </li>
             </ul>
